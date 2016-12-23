@@ -32,7 +32,7 @@ print "Is it less or equal?",5<=-2
 
 
 #try to do math
-print 3=5
+print 3+5
 print 3+9583-1917*4
 
 #to use a float point number
