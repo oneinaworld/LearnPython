@@ -1,3 +1,7 @@
+# I like the statement of this lesson so I copy it here:
+# "This shows all the different ways we're able to give our function the values it needs to print them. 
+# "We can give it straight numbers. We can give it variables. We can give it math. We can combine math and variables.
+
 def cheese_and_crackers(cheese_count, boxes_of_crackers):
     print "You have %d cheese!" % cheese_count
     print "you have %d boxes of crackers!" %boxes_of_crackers
