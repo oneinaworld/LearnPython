@@ -4,7 +4,8 @@ script, input_file = argv
 
 def print_all(f):
     print f.read()
-    
+
+# file.seek is a function for moving mouse
 def rewind(f):
     f.seek(0)
     
@@ -26,6 +27,7 @@ print "Let's print three lines."
 current_line = 1
 print_a_line(current_line, current_file)
 
+# also can be  current_line += 1
 current_line = current_line + 1
 print_a_line(current_line, current_file)
 
