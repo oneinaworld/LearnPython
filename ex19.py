@@ -17,4 +17,4 @@ print "We can even do math inside too:"
 cheese_and_crackers(10 + 20, 5 + 6)
  
 print "And we can combine the two, varibles and math:"
-cheese_and_crackers(amount_of_cheese + 100, amout_of_crackers + 1000)
+cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
