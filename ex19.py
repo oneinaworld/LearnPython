@@ -35,4 +35,4 @@ def buy(price_of_cloth, price_of_shoes):
 price_of_cloth = raw_input("What's the price of cloth?")
 price_of_shoes = raw_input("What's the price of shoes?")
 
-def buy(price_of_cloth, price_of_shoes)
+buy(1000, 2000)
