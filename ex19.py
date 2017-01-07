@@ -28,11 +28,11 @@ cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
 
 # I'll write a function of my own.
 def buy(price_of_cloth, price_of_shoes):
-    print "The price of clothe is %d!" % price_of_cloth
-    print "The price of shoes is %d!" % price_of_shoes
+    print "The price of clothe is %s!" % price_of_cloth
+    print "The price of shoes is %s!" % price_of_shoes
     print "So that's too much! I won't buy!"
 
 price_of_cloth = raw_input("What's the price of cloth?")
 price_of_shoes = raw_input("What's the price of shoes?")
 
-buy(1000, 2000)
+buy(price_of_cloth, price_of_shoes)
