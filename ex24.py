@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+# 这样就可以用中文注释了
 print "Let's practice everything."
 print 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'
 
@@ -17,7 +19,7 @@ print "----------"
 five = 10 - 0 + 3 - 6
 print "This should be five: %s" % five
 
-def secret_fomula(started):
+def secret_formula(started):
     jelly_beans = started * 500 
     jars = jelly_beans / 1000
     crates = jars / 100
@@ -32,4 +34,4 @@ print "We'd have %d beans, %d jars, and %d crates." % (beans, jars, crates)
 start_point = start_point / 10
 
 print "We can also do that this way:"
-print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point) # %后直接用func
+print "We'd have %d beans, %d jars, and %d crates." % secret_formula(start_point)   # %后直接用func
