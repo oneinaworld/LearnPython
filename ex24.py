@@ -1,5 +1,5 @@
 print "Let's practice everything."
-print 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'     # 训练escape sequence的用法
+print 'You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs.'
 
 poem = """
 \tThe lovely world
