@@ -14,8 +14,6 @@ joke_evaluation = "Isn't that joke so funny?!%r"
 
 print joke_evaluation % hilarious
 
-# 代码就是替代来替代去
-
 w = "This is the left side of..."
 e = "a string with a right side."
 print w + e
