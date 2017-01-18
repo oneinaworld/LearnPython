@@ -16,3 +16,10 @@ bulls_on_parade = Song(["They rally around tha family",
 happy_bday.sing_me_a_song()
 
 bulls_on_parade.sing_me_a_song()
+
+# for studydrills2
+happy_bday1 = Song("Happy birthday to you")
+happy_bday2 = Song("I don't want to get sued")
+
+happy_bday1.sing_me_a_song()
+happy_bady2.sing_me_a_song()
