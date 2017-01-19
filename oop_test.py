@@ -31,7 +31,7 @@ else:
   
 # load up the words from the website
 for word in urlopen(WORD_URL).readlines():
-    WORDS.append(word.strip())    # strip函数？
+    WORDS.append(word.strip())    # strip函数，移除word头尾指定字符，此处移除空格。
     
 
 def convert(snippet, phrase):
@@ -49,16 +49,16 @@ def convert(snippet, phrase):
     results = []
     param_names = []  
     
-    for i in range(0, snippet.count("@@@")):
-        param_count = random.randint(1,3)
-        param_names.append(','.join(random.sample(WORDS, param_count)))
+    for i in range(0, snippet.count("@@@")):   # 在snippet的个数范围内
+        param_count = random.randint(1,3)  #random.randint，在1-3范围内生成随机整数。
+        param_names.append(','.join(random.sample(WORDS, param_count)))  #扩充param_names列表。用从WORDS列表中的获取元素并且用“，”连接的。
         
     for sentence in snippet, phrase:
         result = sentence[:]
         
         # fake class names
         for word in class_names:
-            result = result.replace("%%%", word, 1)
+            result = result.replace("%%%", word, 1)  # replace函数。把%%%替换为word，不超过1次。
             
         # fake other names
         for word in other_names:
