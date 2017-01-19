@@ -35,8 +35,17 @@ for word in urlopen(WORD_URL).readlines():
     
 
 def convert(snippet, phrase):
-    class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]      #为什么有for？capitalize是什么？              
-    other_names = random.sample(WORDS, snippet.count("***"))    #random生成随机数。count计算出现次数
+    class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]  #   
+    """random模块。
+    random.sample  从WORD中随机获得snippet.count个元素且不改变WORD。
+    
+    capitalize函数。
+    返回w的一个副本，只有第一个字母大写。
+    
+    count函数。
+    在snippet中搜索%%%出现的次数。
+    """
+    other_names = random.sample(WORDS, snippet.count("***"))    # 
     results = []
     param_names = []  
     
@@ -64,11 +73,11 @@ def convert(snippet, phrase):
     return results
         
 
-# keep going until the hit CTRL-D
+# keep going until they hit CTRL-D
 try:
     while True:
-        snippets = PHRASES.keys()
-        random.shuffle(snippets)
+        snippets = PHRASES.keys()  # keys函数，返回字典所有的key。
+        random.shuffle(snippets)  # random.shuffle，把snippets列表中的元素打乱更新。
         
         for snippet in snippets:
             phrase = PHRASES[snippet]
