@@ -37,7 +37,7 @@ for word in urlopen(WORD_URL).readlines():
 def convert(snippet, phrase):
     class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]      #为什么有for？capitalize是什么？              
     other_names = random.sample(WORDS, snippet.count("***"))    #random生成随机数。count计算出现次数
-    result = []
+    results = []
     param_names = []  
     
     for i in range(0, snippet.count("@@@")):
