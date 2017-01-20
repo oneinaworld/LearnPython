@@ -35,10 +35,10 @@ for word in urlopen(WORD_URL).readlines():
     WORDS.append(word.strip())    # strip函数，移除word头尾指定字符，此处移除空格。
     # 这里其实就是用word列表里的单词去填充WORDS。
     
-def convert(snippet, phrase):   # 此函数的用途为，
+def convert(snippet, phrase):   
     # 1：
-    class_names = [w.capitalize() for w in 
-                   random.sample(WORDS, snippet.count("%%%"))]  # snippet中有几个%%%，就从WORDS中拿出几个元素，组成列表
+    class_names = [w.capitalize() for w in   # 此处for循环在句中。
+                   random.sample(WORDS, snippet.count("%%%"))]  # snippet中有几个%%%，就从WORDS中拿出几个元素。首字大写组成列表。
     """random模块。
     random.sample  从WORDS中随机获得snippet.count个元素组成新列表，且不改变WORD。
     
@@ -53,18 +53,19 @@ def convert(snippet, phrase):   # 此函数的用途为，
     param_names = []  
     
     # 2：
-    for i in range(0, snippet.count("@@@")):   # 在snippet中有几个@@@，拿出一个
-        param_count = random.randint(1,3)  # random.randint，在1-3范围内生成随机整数。参数个数为1-3随机。
+    for i in range(0, snippet.count("@@@")):   # 在snippet中有几个@@@，循环拿出
+        param_count = random.randint(1,3)  # random.randint，在1-3范围内生成随机整数。
         param_names.append(','.join(random.sample(WORDS, param_count)))  
-        # 有几个参数，就从WORDS中拿出几个元素，并且用“，”连接，结果放入列表
+        # 随机，从WORDS中拿出几个元素，并且用“，”连接，结果放入列表param_names
         
     # 3：
-    for sentence in snippet, phrase:
-        result = sentence[:]
+    for sentence in snippet, phrase:   # snippet, phrase为键，值。为什么是有逗号的？
+        result = sentence[:]   # 创建列表副本result。
         
         # fake class names
         for word in class_names:
             result = result.replace("%%%", word, 1)  # replace函数。把%%%替换为word，不超过1次。
+        # 用class_names里的元素替换%%%
             
         # fake other names
         for word in other_names:
@@ -73,10 +74,13 @@ def convert(snippet, phrase):   # 此函数的用途为，
         # fake parameter listes
         for word in param_names:
             result = result.replace("@@@", word, 1)
+            
+        # 以上形成了新result列表。
         
-        results.append(result)
+        results.append(result)  # 以上循环的每一个result组成results列表
         
     return results
+    #此函数的结果，是形成results列表。
         
 
 # 第二步
@@ -91,10 +95,10 @@ try:
         for snippet in snippets:    # 从snippets中取出一个元素snippet，即PHRASES中的键。
             phrase = PHRASES[snippet]    # 从PHRASES中取出对应的值phrase
             question, answer = convert(snippet, phrase)   # 进入convert函数。
-            if PHRASE_FIRST:
-                question, answer = answer, question
+            if PHRASE_FIRST:   # 如果输入时参数为english
+                question, answer = answer, question    # 转键和值的顺序。
             
-            print question
+            print question    # 打印值。
             
             raw_input("> ")
             print "ANSWER:   %s\n\n" % answer
