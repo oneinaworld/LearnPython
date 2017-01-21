@@ -9,11 +9,19 @@ class Scene(object):      # scene类
         exit(1)
         
 class Engine(object):
-    def __inif__(self, scene_map):
-        pass
+    def __inif__(self, scene_map):       # 定义了scene_map
+        self.scene_map = scene_map
         
     def play(self):
-        pass
+        current_scene = self.scene_map.opening_scene()     
+        last_scene = self.scene_map.next_scene('finished')       
+        
+        while current_scene != last_scene:
+            next_scene_name = current_scene.enter()
+            current_scene = self.scene_map.next_scene(next_scene_name)
+            
+            # be sure to print out the last scene
+            current_scene.enter()
         
        
 class Death(Scene):        # death是scene类
