@@ -1,9 +1,12 @@
 # -*- coding:utf-8 -*-
 
+from sys import exit
+from random import randint
+
 class Scene(object):      # scene类
     def enter(self):
-        pass
-        
+        print "This scene is not yet configured. Subclass it and implement enter()
+        exit(1)
         
 class Engine(object):
     def __inif__(self, scene_map):
