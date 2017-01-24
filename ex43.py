@@ -9,7 +9,7 @@ class Scene(object):      # scene类
         exit(1)
         
 class Engine(object):
-    def __init__(self, scene_map):       # 为什么有这个？
+    def __init__(self, scene_map):       # 每个engine类，默认有scene_map属性。
         self.scene_map = scene_map
         
     def play(self):
