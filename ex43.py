@@ -9,7 +9,7 @@ class Scene(object):      # scene类
         exit(1)
         
 class Engine(object):
-    def __inif__(self, scene_map):       # 定义了scene_map
+    def __inif__(self, scene_map):       #  为什么有这个？
         self.scene_map = scene_map
         
     def play(self):
@@ -25,7 +25,7 @@ class Engine(object):
         
        
 class Death(Scene):        # death是scene类
-    def enter(self):
+    def enter(self):       # 为什么还要再定义enter函数？
         pass
         
         
@@ -49,7 +49,7 @@ class EscapePod(Scene):        # escapepod是scene类
         pass
         
         
-class Map(object):
+class Map(object):            # Map类
     def __inif__(self, start_scene):
         pass
         
@@ -61,6 +61,6 @@ class Map(object):
         
         
         
-a_map = Map('central_corridor')
-a_game = Engine(a_map)
+a_map = Map('central_corridor')        # central corridor是一个map，也是一个scene？
+a_game = Engine(a_map)           
 a_game.play()
