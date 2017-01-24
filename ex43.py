@@ -4,24 +4,24 @@ from sys import exit
 from random import randint
 
 class Scene(object):      # scene类
-    def enter(self):
+    def enter(self):      # 定义enter动作
         print "This scene is not yet configured. Subclass it and implement enter()
         exit(1)
         
 class Engine(object):
-    def __inif__(self, scene_map):       #  为什么有这个？
+    def __init__(self, scene_map):       # 为什么有这个？
         self.scene_map = scene_map
         
     def play(self):
-        current_scene = self.scene_map.opening_scene()     
-        last_scene = self.scene_map.next_scene('finished')       
+        current_scene = self.scene_map.opening_scene()        # 当运行play时，定义现在的场景与scene_map的联系（opening_scene的动作在map中定义）
+        last_scene = self.scene_map.next_scene('finished')    # 定义上一个场景与next_scene的联系（next_scene的动作在map中定义）
         
-        while current_scene != last_scene:
-            next_scene_name = current_scene.enter()
-            current_scene = self.scene_map.next_scene(next_scene_name)
+        while current_scene != last_scene:                    # 确保二者不是一个场景
+            next_scene_name = current_scene.enter()           # 进入现在的场景后，即为下一个场景
+            current_scene = self.scene_map.next_scene(next_scene_name)      # 定义现在的场景与下一个场景名字的联系
             
             # be sure to print out the last scene
-            current_scene.enter()
+            current_scene.enter()                             # 进入现在的场景
         
        
 class Death(Scene):        # death是scene类
