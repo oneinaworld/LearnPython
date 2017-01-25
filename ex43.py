@@ -188,17 +188,27 @@ class Finished(Scene):            # 结束也是一个场景！
         
         
 class Map(object):            # Map类
+    
+    scenes = {                 # 用字典把前面类中return的结果与Scene类对应起来。为什么不直接return类呢？
+        'central_corridor':CentralCorridor(),
+        'laser_weapon_armory':LaserWeaponArmory(),
+        'the_bridge':TheBridge(),
+        'escape_pod':EscapePod(),
+        'death':Death(),
+        'finished':Finished(),
+    }
+    
     def __inif__(self, start_scene):
-        pass
+        self.start_scene = start_scene
         
-    def next_scene(self, scene_name):
-        pass
+    def next_scene(self, scene_name):        # 定义next_scene的动作，从Map中取得scene名，得到对应类名，并赋值给val
+        val = Map.scenes.get(scene_name)      # 从Map类中所定义的字典中取得类名
         
-    def opening_scene(self):
-        pass
+    def opening_scene(self):           # 定义opening_scene的动作。在next_scene中运行start_scene参数
+        return self.next_scene(self.start_scene)
         
         
         
-a_map = Map('central_corridor')        # central corridor是一个map，也是一个scene？
-a_game = Engine(a_map)           
-a_game.play()
+a_map = Map('central_corridor')        # 载入第一张地图'central_corrridor'
+a_game = Engine(a_map)                 # 载入第一个引擎，由第一张地图对应而来
+a_game.play()                          # 执行引擎中play运作
