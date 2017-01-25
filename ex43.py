@@ -5,7 +5,7 @@ from random import randint
 
 class Scene(object):      # scene类
     def enter(self):      # 定义enter动作
-        print "This scene is not yet configured. Subclass it and implement enter()
+        print "This scene is not yet configured. Subclass it and implement enter()."
         exit(1)
         
 class Engine(object):
