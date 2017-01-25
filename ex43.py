@@ -145,7 +145,7 @@ class TheBridge(Scene):        # thebridge是scene类
             print "Now that the bomb is placed you run to the escape pod to"
             print "get off thei tin can."
             return 'escape_pod'
-        esle:
+        else:
             print "DOES NOT COMPUTE!"
             return "the_bridge"         # 为什么不是print，而是用return？return后为什么用字符串？
         
