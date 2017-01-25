@@ -77,7 +77,7 @@ class CentralCorridor(Scene):    # centralcorridor是scene类
             print "The Gothon stops, tries not to laugh, then busts out laughing and car"
             print "While he's laughing you run up and shoot him square in the head"
             print "putting him down, then jump through the Weapon Armory door."
-            return 'laser_weapon_armory"       
+            return 'laser_weapon_armory'      
         
         else:
             print "DOES NOT COMPUTE!"
