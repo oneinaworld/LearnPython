@@ -198,7 +198,7 @@ class Map(object):            # Map类
         'finished':Finished(),
     }
     
-    def __inif__(self, start_scene):
+    def __init__(self, start_scene):
         self.start_scene = start_scene
         
     def next_scene(self, scene_name):        # 定义next_scene的动作，从Map中取得scene名，得到对应类名，并赋值给val
@@ -212,3 +212,4 @@ class Map(object):            # Map类
 a_map = Map('central_corridor')        # 载入第一张地图'central_corrridor'
 a_game = Engine(a_map)                 # 载入第一个引擎，由第一张地图对应而来
 a_game.play()                          # 执行引擎中play运作
+# 运行时报，line212，object() takes no parameters。但Map不是已经在init中定义了吗？后来才发现，把init写成inif了。。。
