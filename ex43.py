@@ -203,6 +203,7 @@ class Map(object):            # Map类
         
     def next_scene(self, scene_name):        # 定义next_scene的动作，从Map中取得scene名，得到对应类名，并赋值给val
         val = Map.scenes.get(scene_name)      # 从Map类中所定义的字典中取得类名
+        return val
         
     def opening_scene(self):           # 定义opening_scene的动作。在next_scene中运行start_scene参数
         return self.next_scene(self.start_scene)
@@ -213,3 +214,5 @@ a_map = Map('central_corridor')        # 载入第一张地图'central_corrridor
 a_game = Engine(a_map)                 # 载入第一个引擎，由第一张地图对应而来
 a_game.play()                          # 执行引擎中play运作
 # 运行时报，line212，object() takes no parameters。但Map不是已经在init中定义了吗？后来才发现，把init写成inif了。。。
+# 当拼写错误都改正后，竟然来了个空运行。。。这意味着，有非拼写的错误。。。这是更难以找的错误。。。只有重新核对一遍。。。
+# 发现第206行写掉了。
